@@ -1,7 +1,63 @@
+@primary-color: #3498db;
+@secondary-color: #f2f2f2;
+@text-color: #333;
+@button-hover-color: lighten(@primary-color, 10%);
+@input-border-color: darken(@secondary-color, 20%);
+@input-hover-border-color: darken(@input-border-color, 15%);
+
 .index-page {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    // align-items: center;
+    .button {
+        width: 100%;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: @primary-color;
+        color: white;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: @button-hover-color;
+        }
+    }
+
+    .result-container {
+        margin: 20px;
+        padding: 15px;
+        background-color: white;
+        border: 1px solid @input-border-color;
+        border-radius: 4px;
+
+        table {
+            width: 100%; // 根据需求，您可能需要调整宽度
+            border-collapse: collapse; // 用于获取单一的边框
+
+            th,
+            td {
+                border: 1px solid #000; // 给表格头和单元格添加边框
+                padding: 8px; // 添加一些内边距使表格更易读
+                text-align: left; // 根据需要调整对齐方式
+            }
+
+            th {
+                background-color: #f0f0f0; // 给表格头添加背景色，使其更突出
+            }
+
+            tr:nth-child(even) {
+                background-color: #f9f9f9; // 给表格的偶数行添加条纹样式
+            }
+
+            tr:hover {
+                background-color: #e8e8e8; // 鼠标悬停时的行背景色
+            }
+        }
+    }
 }
